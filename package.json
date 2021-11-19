@@ -1,0 +1,44 @@
+{
+  "name": "react-rough-utils",
+  "version": "1.0.0",
+  "description": "这是一个简单的工具包，包含一定的js工具函数 和 部分react-hook ",
+  "scripts": {
+    "build": "gulp --gulpfile config/gulpfile.js build",
+    "dev": "gulp --gulpfile config/gulpfile.js dev"
+  },
+  "main": "es/index.js",
+  "module": "es/index.js",
+  "types": "@types/index.d.ts",
+  "typings": "@types/index.d.ts",
+  "keywords": ["typescript", "react-utils", "utils", "react-hook", "react-rough-utils", "observer", "countdown"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "rollup": "^2.60.0",
+    "rollup-plugin-typescript2": "^0.31.0",
+    "typescript": "^4.4.4",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/plugin-transform-typescript": "^7.16.1",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "@babel/runtime": "^7.16.3",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@types/react": "^17.0.35",
+    "@types/react-dom": "^17.0.11",
+    "browser-sync": "^2.27.7",
+    "core-js": "^2.6.12",
+    "fs-extra": "^10.0.0",
+    "react-dom": "^17.0.2"
+  }
+}
