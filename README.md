@@ -10,12 +10,11 @@ ___
 ```
 ##### 使用
 ```  
-// 具有两个对象  
-import {Utils, Hooks} from 'react-rough-utils'  
+    import {Utils, Hooks} from 'react-rough-utils'  
 // Utils对象具有 js 函数  
-const {} = Utils  
+    const {} = Utils  
 // Hooks对象具有 react-hook 函数  
-const {} = Hooks
+    const {} = Hooks
 ```  
 
 ##### Hooks
