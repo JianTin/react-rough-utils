@@ -13,11 +13,10 @@ export namespace observer {
     }
 }
 
-export default class Observer{
-    new (): Observer
+export default interface Observer{
+    new (init?: {[key: string]: any}): Observer
     state: observer.state
     event: observer.event
-    constructor(init?: observer.state)
     getState: observer.method['getState']
     subscription: observer.method['subscription']
     notify: observer.method['notify']
