@@ -2,6 +2,7 @@
 ___
 这是一个简单的工具包，包含一定的js函数 和 部分react-hook 。  
 支持ts，内置 .d.ts 文件。  
+支持 webpack、rough 的 tree shaking。只打包你使用的代码。
 ##### 安装
 ```
     npm i react-rough-utils
