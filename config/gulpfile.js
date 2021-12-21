@@ -1,4 +1,4 @@
-const {src, dest, watch, task, series} = require('gulp')
+const {src, dest, watch, task, series, parallel} = require('gulp')
 const gulpBabel = require('gulp-babel')
 const {rmdirSync, existsSync} = require('fs')
 const {join, dirname} = require('path')
@@ -33,7 +33,7 @@ function clear(cb){
 }
 
 // 编译 为 库文件夹
-function compile(){
+function esmCompile(){
     return src('../src/**/*.ts')
     .pipe(
         gulpBabel({
@@ -51,7 +51,26 @@ function compile(){
     .pipe(dest('../es'))
 }
 
-task('build', series(clear, compile))
+// 编译 为 库文件夹
+function cjsCompile(){
+    return src('../src/**/*.ts')
+    .pipe(
+        gulpBabel({
+            "presets": [
+                "@babel/preset-typescript", 
+                ["@babel/preset-env", {
+                    "loose": true,
+                    "modules": 'cjs',
+                    "useBuiltIns": false
+                }]
+        ],
+            "plugins": ["@babel/plugin-transform-runtime"]
+        })
+    )
+    .pipe(dest('../lib'))
+}
+
+task('build', series(clear, parallel(esmCompile, cjsCompile)))
 
 function initDev(cb){
     copySync(publicHtmlPath, distHtmlPath)
@@ -94,7 +113,7 @@ async function devCompile(){
 }
 
 function devWatch(){
-    watch(['../devMode/**/*.ts', '../devMode/**/*.tsx'], async function(cb){
+    watch(['../devMode/**/*.ts', '../devMode/**/*.tsx', '../src/**/*.ts'], async function(cb){
         await devCompile()
         browserSync.reload()
         cb()

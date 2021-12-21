@@ -1,12 +1,12 @@
 {
-  "name": "react-rough-utils",
-  "version": "1.0.2",
+  "name": "rough-react-utils",
+  "version": "1.0.3",
   "description": "这是一个简单的工具包，包含一定的js工具函数 和 部分react-hook ",
   "scripts": {
     "build": "gulp --gulpfile config/gulpfile.js build",
     "dev": "gulp --gulpfile config/gulpfile.js dev"
   },
-  "main": "es/index.js",
+  "main": "lib/index.js",
   "module": "es/index.js",
   "types": "@types/index.d.ts",
   "typings": "@types/index.d.ts",

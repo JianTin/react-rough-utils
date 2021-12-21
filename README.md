@@ -1,17 +1,17 @@
-### react-rough-utils
+### rough-react-utils
 ___
 这是一个简单的工具包，包含一定的js函数 和 部分react-hook 。  
 支持ts，内置 .d.ts 文件。  
 支持 webpack、rough 的 tree shaking。只打包你使用的代码。
 ##### 安装
 ```
-    npm i react-rough-utils
+    npm i rough-react-utils
         /
-    yarn add react-rough-utils
+    yarn add rough-react-utils
 ```
 ##### 使用
 ```  
-    import {Utils, Hooks} from 'react-rough-utils'  
+    import {Utils, Hooks} from 'rough-react-utils'  
 // Utils对象具有 js 函数  
     const {} = Utils  
 // Hooks对象具有 react-hook 函数  
@@ -26,7 +26,7 @@ ___
 ###### useSaferState
 一个安全的useState，保证在当前组件卸载后 不会再进行 更新状态
 ```
-    import {Utils, Hooks} from 'react-rough-utils' 
+    import {Utils, Hooks} from 'rough-react-utils' 
     const {useSaferState} = Hooks
     export default function(){
         const [count, setCount] = useSaferState(0)
@@ -75,7 +75,7 @@ ___
 （ 如果需要 可以提 issues ）
 
 ```
-    import {Utils} from 'react-rough-utils'
+    import {Utils} from 'rough-react-utils'
     const {Observer} = Utils
     const {getState, subscription, notify, untie} = new Observer(init)
         init: 对象，代表初始化数据
@@ -92,7 +92,7 @@ ___
 
 ```
     // 一个例子
-    import {Utils} from 'react-rough-utils'
+    import {Utils} from 'rough-react-utils'
     const {Observer} = Utils
     const observer = new Observer({
         text: '123'
