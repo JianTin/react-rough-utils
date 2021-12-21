@@ -1,6 +1,6 @@
 {
   "name": "rough-react-utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "这是一个简单的工具包，包含一定的js工具函数 和 部分react-hook ",
   "scripts": {
     "build": "gulp --gulpfile config/gulpfile.js build",
