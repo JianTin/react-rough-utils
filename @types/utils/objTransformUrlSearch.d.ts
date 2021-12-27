@@ -1,5 +1,5 @@
 type objTransformUrlSearch = (
     obj: {[key: string]: number | string}
-)=>void
+)=>string
 
 export default objTransformUrlSearch
