@@ -69,6 +69,7 @@ ___
 - hashScrollToId: 根据 url的hash，滚动到 id 对应 hash 的元素。<element id='hash' ...>
 - clearUrlHash: 清除当前页面url的hash，不刷新页面
 - clearUrlSearch: 清除当前页面url的search，不刷新页面
+- urlRunExtensions: 判断扩展 是否可以运行在该url上
 
 ###### Observer
 一个构造函数，可以充当一个简单的 vue/react 简单的状态通信装置
@@ -134,19 +135,16 @@ ___
     console.log( obj ) // {a: 123, c: 321}
 ```
 
-###### hashScrollToId
-根据当前 url#hash 滚动到对应的 <element id='hash' ...>
+###### scollToId
+传入 id 滚动到对应的dom
 ```
-    // 真实情况，可能不是这样。可能出现路由跳转后 滚动的情况
-    // 否则 使用 a.href 就能实现
     html
         <button>scroll</button>
         <div style='height: 1000px'></div>
         <div id='test'></div>
     js
         document.querySelector('button').onclick(()=>{
-            window.history.pushState({}, '', `${window.location.href}#test`)
-            hashScrollToId()
+            hashScrollToId('test')
         })
 ```
 ###### clearUrlHash
@@ -161,3 +159,31 @@ ___
     // http://a.com?a=123 -> http://a.com
     clearUrlHash()
 ```
+
+###### urlRunExtensions
+判断 当前扩展是否可运行于当前url  (chrome extension 专用)  
+参数说明：  
+```
+    // 默认内置 ['chrome.google.com', 'chrome://']
+        // 说明： chrome.google.com -> https://chrome.google.com/webstore/category/extensions?hl=en
+        // chrome:// -> chrome://version、chrome://history ...
+        // chrome.google.com 检索的是 chrome扩展商店。chrome:// 检索的则是chrome 内置页面
+    urlRunExtensions = (
+        // 额外增加检索的页面。如果不需要，传 []
+        extraUrl: string[], 
+        // 检索后的响应。 isRun --- true: 可以运行。false: 不可以运行
+        cb: (isRun: boolean)=>void,
+        // 如果在 background.js 运行，那最好传递 windowId。否则可能会返回fasle
+        windowId?: number
+    )=>void
+```
+例子：
+```
+    // 在 baidu.com、chrome内置页面、chrome扩展商店。isRun 均返回false
+    urlRunExtensions(['baidu.com'], (isRun)=>{
+        if(isRun){
+            ...
+        }
+    })
+```
+

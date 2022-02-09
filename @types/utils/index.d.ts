@@ -1,15 +1,17 @@
 import clearUrlHash from "./clearUrlHash";
 import clearUrlSearch from './clearUrlSearch'
-import hashScrollToId from './hashScrollToId'
+import scollToId from './scollToId'
 import objTransformUrlSearch from './objTransformUrlSearch'
 import urlSearchTransformObj from "./urlSearchTransformObj"
 import Observer from './observer'
+import urlRunExtensions from './urlRunExtensions'
 
 export default interface Utils {
     clearUrlHash: clearUrlHash
     clearUrlSearch: clearUrlSearch
-    hashScrollToId: hashScrollToId
+    scollToId: scollToId
     objTransformUrlSearch: objTransformUrlSearch
     urlSearchTransformObj: urlSearchTransformObj
     Observer: Observer
+    urlRunExtensions: urlRunExtensions
 }
