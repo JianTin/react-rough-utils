@@ -66,7 +66,7 @@ ___
 - Observer: 一个构造函数，可以充当一个简单的 vue/react 简单的状态通信装置
 - objTransformUrlSearch: 将传入的obj，转换为 url 格式的 search 返回
 - urlSearchTransformObj: 将传入的search，转换为 obj 格式返回
-- hashScrollToId: 根据 url的hash，滚动到 id 对应 hash 的元素。<element id='hash' ...>
+- scrollToId: 根据 url的hash，滚动到 id 对应 hash 的元素。<element id='hash' ...>
 - clearUrlHash: 清除当前页面url的hash，不刷新页面
 - clearUrlSearch: 清除当前页面url的search，不刷新页面
 - urlRunExtensions: 判断扩展 是否可以运行在该url上
@@ -135,7 +135,7 @@ ___
     console.log( obj ) // {a: 123, c: 321}
 ```
 
-###### scollToId
+###### scrollToId
 传入 id 滚动到对应的dom
 ```
     html
@@ -144,7 +144,7 @@ ___
         <div id='test'></div>
     js
         document.querySelector('button').onclick(()=>{
-            hashScrollToId('test')
+            scrollToId('test')
         })
 ```
 ###### clearUrlHash

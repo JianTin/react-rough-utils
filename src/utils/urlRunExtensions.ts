@@ -1,7 +1,7 @@
-import type urlRunExtensions from '../../@types/utils/urlRunExtensions';
+import type urlRunExtensionsType from '../../@types/utils/urlRunExtensions';
 
 const notUrlCbArray = ['chrome.google.com', 'chrome://']
-const urlRunExtensions: urlRunExtensions = function urlRunExtensions(extraUrl, cb, windowId){
+const urlRunExtensions: urlRunExtensionsType = function urlRunExtensions(extraUrl, cb, windowId){
     const newArray = notUrlCbArray.concat(extraUrl)
     function retrieveUrl(tabs: chrome.tabs.Tab[]){
         if(tabs.length === 1) {
