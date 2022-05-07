@@ -5,6 +5,7 @@ import objTransformUrlSearch from './objTransformUrlSearch'
 import urlSearchTransformObj from "./urlSearchTransformObj"
 import Observer from './observer'
 import urlRunExtensions from './urlRunExtensions'
+import transformEhibitPrice from "./transformExhibitPrice";
 
 export default interface Utils {
     clearUrlHash: clearUrlHash
@@ -14,4 +15,5 @@ export default interface Utils {
     urlSearchTransformObj: urlSearchTransformObj
     Observer: Observer
     urlRunExtensions: urlRunExtensions
+    transformEhibitPrice: transformEhibitPrice
 }
